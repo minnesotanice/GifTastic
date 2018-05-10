@@ -14,7 +14,7 @@ function renderButtons() {
     // Loop through the array of topics, then generate buttons for each topic in the array
     for (var i = 0; i < topics.length; i++) {
 
-        $('#js-topics-view').append("<button type='button' class='btn btn-info js-topic-button'>" + topics[i] + "</button>");
+        $('#').append("<tr><td class=''></td><td class=''></td><td class=''></td><td class=''></td><td class=''></td><td class=''></td></tr>");
 
     };
 
@@ -95,29 +95,29 @@ function updatePage(requestedGIFs) {
 
 
 // This function handles events where the add topic button is clicked
-$("#add-topic").on("click", function (event) {
-    // event.preventDefault() prevents submit button from trying to send a form.
-    // Using a submit button instead of a regular button allows the user to hit
-    // "Enter" instead of clicking the button if desired
-    event.preventDefault();
+    $("#add-topic").on("click", function (event) {
+        // event.preventDefault() prevents submit button from trying to send a form.
+        // Using a submit button instead of a regular button allows the user to hit
+        // "Enter" instead of clicking the button if desired
+        event.preventDefault();
 
-    // Write code to grab the text the user types into the input field
-    var newTopic = $("#topic-input").val();
+        // Write code to grab the text the user types into the input field
+        var newTopic = $("#topic-input").val();
 
-    // Write code to add the new topic into the topics array
-    topics.push(newTopic);
+        // Write code to add the new topic into the topics array
+        topics.push(newTopic);
 
-    // CLEARS INPUT FIELD
-    // $("#topic-input").val("").focus();
+        // CLEARS INPUT FIELD
+        // $("#topic-input").val("").focus();
 
 
-    // The renderButtons function is called, rendering the list of topic buttons
-    renderButtons();
+        // The renderButtons function is called, rendering the list of topic buttons
+        renderButtons();
 
-    // Function to empty out  .js-image-section
-    clear();
+        // Function to empty out  .js-image-section
+        clear();
 
-});
+    });
 
 // CLICK TOPIC BUTTON TO MAKE GIFS DISPLAY
 $(document).on("click", ".js-topic-button", function (event) {
